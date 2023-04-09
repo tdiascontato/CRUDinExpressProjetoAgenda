@@ -1,0 +1,48 @@
+<%- include('includes/home'); %>
+<%- include('includes/nav'); %>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8 my-3">
+            <h1 class="display-1 text-center">Login do Ti:</h1>
+            <p class="text-center lead">Área de login!</p>
+            <div class="row">
+                <div class="col-lg">
+                    <h4>Faça seu cadastro abaixo:</h4>
+                    <p>Ainda não tem conta? Faça uma :) </p>                  
+                    <form action="/login/register" method="post">
+                      <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+                      <div class="form-group">
+                        <label>Crie seu mail:</label>
+                        <input type="email" class="form-control" name="email">
+                      </div>
+                      <div class="form-group">
+                        <label>Crie sua senha:</label>
+                        <input type="pasword" class="form-control" name="password">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Cadastrar!</button>
+                    </form>
+                </div>
+                <div class="col-lg">
+                    <h4>Faça seu Login abaixo:</h4>
+                    <p>Quer entrar no sistema? Faça o Login :) </p>
+                    
+                    <form action="/login/logar" method="post">
+                      <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+                      <div class="form-group">
+                        <label>Seu mail:</label>
+                        <input type="email" class="form-control" name="email">
+                      </div>
+                      <div class="form-group">
+                        <label>Sua senha:</label>
+                        <input type="pasword" class="form-control" name="password">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Logar!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+<%- include('includes/footer'); %>
